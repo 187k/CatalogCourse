@@ -2,7 +2,10 @@
 
 @{
     ViewData["Title"] = "Каталог руководств";
+    var languages = ViewBag.Languages as List<string>;
+    var selectedLanguage = ViewBag.SelectedLanguage as string;
 }
+
 
 <head>
     <meta charset="utf-8" />
@@ -15,7 +18,24 @@
 
 
 <div class="container mt-4">
+    <a href="/Home" class="btn btn-lg btn-outline-primary mt-3 shadow-sm">
+        Вернуться на главную страницу
+    </a>
     <h1 class="mb-4 text-center">Каталог руководств</h1>
+
+    <form method="get" asp-controller="Guides" asp-action="Index" class="mb-3">
+        <label for="language" class="form-label">Выберите язык:</label>
+        <select name="language" id="language" class="form-select w-auto d-inline">
+            <option value="">Все</option>
+            @foreach (var lang in languages)
+            {
+                <option value="@lang" selected="@(lang == selectedLanguage)">
+                    @lang
+                </option>
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">Фильтровать</button>
+    </form>
 
     <div class="row">
         @foreach (var item in Model)

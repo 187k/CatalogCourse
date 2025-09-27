@@ -1,5 +1,53 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Главная страница";
 }
 
-<h1>Welcome</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CatalogCourse</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="site.css" asp-append-version="true" />
+</head>
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-primary fw-bold">Добро пожаловать в CatalogCourse</h1>
+        <p class="lead text-muted">
+            Здесь вы найдёте полезные руководства и курсы по программированию
+        </p>
+        <a href="/Guides" class="btn btn-lg btn-outline-primary mt-3 shadow-sm">
+            Перейти к каталогу
+        </a>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">🚀 Быстрый старт</h5>
+                    <p class="card-text">Изучите основы C#, ASP.NET и SQL для уверенного старта.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-success">📚 Каталог курсов</h5>
+                    <p class="card-text">Собранные руководства по современным языкам программирования.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">💡 Полезные ссылки</h5>
+                    <p class="card-text">Официальная документация и ресурсы для углубленного изучения.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
