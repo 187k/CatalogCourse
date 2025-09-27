@@ -1,5 +1,6 @@
-﻿using CatalogCourse.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using CatalogCourse.Models;
+using System.Linq;
 
 namespace CatalogCourse.Controllers
 {
@@ -12,11 +13,24 @@ namespace CatalogCourse.Controllers
             _context = context;
         }
 
-        // Метод Index: выводит список всех руководств
-        public IActionResult Index()
+        public IActionResult Index(string? language)
         {
-            var guides = _context.Guides.ToList();
-            return View(guides); // ищет Views/Guides/Index.cshtml
+            var languages = _context.Guides
+                .Select(g => g.Language)
+                .Distinct()
+                .ToList();
+
+            ViewBag.Languages = languages;
+            ViewBag.SelectedLanguage = language;
+
+            var guides = _context.Guides.AsQueryable();
+
+            if (!string.IsNullOrEmpty(language))
+            {
+                guides = guides.Where(g => g.Language == language);
+            }
+
+            return View(guides.ToList());
         }
     }
 }
