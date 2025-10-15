@@ -32,5 +32,63 @@ namespace CatalogCourse.Controllers
 
             return View(guides.ToList());
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Guide guide)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Guides.Add(guide);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(guide);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var guide = _context.Guides.FirstOrDefault(g => g.Id == id);
+            if (guide != null)
+            {
+                _context.Guides.Remove(guide);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var guide = _context.Guides.FirstOrDefault(g => g.Id == id);
+            if (guide == null)
+            {
+                return NotFound();
+            }
+            return View(guide);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Guide guide)
+        {
+            if (id != guide.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(guide);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(guide);
+        }
     }
 }
