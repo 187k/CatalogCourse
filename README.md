@@ -2,8 +2,6 @@
 
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-blue)
 ![C#](https://img.shields.io/badge/Language-C%23-239120?logo=csharp)
-![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-darkblue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
