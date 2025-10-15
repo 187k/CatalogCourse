@@ -1,47 +1,580 @@
-/* ====== Общие стили ====== */
-body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Arial, sans-serif;
+/* ====== FUTURISTIC STYLES ====== */
+:root {
+    --primary: #ffffff;
+    --secondary: #000000;
+    --accent: #00ffea;
+    --gray-100: #f5f5f5;
+    --gray-200: #e0e0e0;
+    --gray-800: #333333;
+    --gray-900: #1a1a1a;
+    --success: #2ed573;
+    --danger: #ff4757;
+    --warning: #ffa502;
+}
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
-/* Заголовок */
-h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
+body {
+    background-color: var(--secondary);
+    color: var(--primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* ====== CONTAINERS ====== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ====== NAVIGATION BUTTONS ====== */
+.navigation-buttons {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 50px;
     font-weight: 600;
-    color: #2c3e50;
-}
-
-/* ====== Карточки ====== */
-.card {
-    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    .nav-btn i {
+        margin-right: 8px;
     }
 
-/* Заголовок карточки */
-.card-title {
+    .nav-btn:hover {
+        background: var(--accent);
+        color: var(--secondary);
+        box-shadow: 0 0 20px var(--accent);
+        transform: translateY(-3px);
+    }
+
+/* ====== HEADERS ====== */
+.page-header {
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.page-subtitle {
     font-size: 1.2rem;
-    font-weight: 600;
-    color: #007bff;
+    color: var(--gray-200);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Подзаголовок */
-.card-subtitle {
-    font-size: 0.9rem;
+/* ====== TABLES ====== */
+.futuristic-table {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 30px 0;
 }
 
-/* Кнопка */
-.card-footer .btn {
+    .futuristic-table thead {
+        background: rgba(0, 255, 234, 0.1);
+    }
+
+    .futuristic-table th {
+        padding: 20px 15px;
+        text-align: left;
+        font-weight: 600;
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+
+    .futuristic-table td {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--gray-200);
+    }
+
+    .futuristic-table tbody tr {
+        transition: all 0.3s ease;
+    }
+
+        .futuristic-table tbody tr:hover {
+            background: rgba(0, 255, 234, 0.05);
+        }
+
+/* ====== FORMS ====== */
+.form-container {
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    padding: 5px 15px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.form-control-futuristic {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: var(--primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+    .form-control-futuristic:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(0, 255, 234, 0.1);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .form-control-futuristic::placeholder {
+        color: var(--gray-200);
+        opacity: 0.7;
+    }
+
+textarea.form-control-futuristic {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-select-futuristic {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--accent);
+    color: var(--primary);
+    border-radius: 10px;
+    padding: 10px 15px;
+    min-width: 200px;
+}
+
+/* ====== BUTTONS ====== */
+.btn-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-futuristic {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 30px;
+    border: 2px solid;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-sm-futuristic {
+    padding: 8px 16px;
     font-size: 0.9rem;
+}
+
+.btn-success-futuristic {
+    background: transparent;
+    color: var(--success);
+    border-color: var(--success);
+}
+
+    .btn-success-futuristic:hover {
+        background: var(--success);
+        color: var(--secondary);
+        box-shadow: 0 0 20px var(--success);
+        transform: translateY(-2px);
+    }
+
+.btn-danger-futuristic {
+    background: transparent;
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+    .btn-danger-futuristic:hover {
+        background: var(--danger);
+        color: var(--primary);
+        box-shadow: 0 0 15px var(--danger);
+        transform: translateY(-2px);
+    }
+
+.btn-warning-futuristic {
+    background: transparent;
+    color: var(--warning);
+    border-color: var(--warning);
+}
+
+    .btn-warning-futuristic:hover {
+        background: var(--warning);
+        color: var(--secondary);
+        box-shadow: 0 0 15px var(--warning);
+        transform: translateY(-2px);
+    }
+
+.btn-primary-futuristic {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+    .btn-primary-futuristic:hover {
+        background: var(--accent);
+        color: var(--secondary);
+        box-shadow: 0 0 15px var(--accent);
+        transform: translateY(-2px);
+    }
+
+.btn-secondary-futuristic {
+    background: transparent;
+    color: var(--gray-200);
+    border-color: var(--gray-200);
+}
+
+    .btn-secondary-futuristic:hover {
+        background: var(--gray-200);
+        color: var(--secondary);
+        box-shadow: 0 0 15px var(--gray-200);
+        transform: translateY(-2px);
+    }
+
+.btn-outline-futuristic {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+    .btn-outline-futuristic:hover {
+        background: var(--accent);
+        color: var(--secondary);
+    }
+
+/* ====== CARDS ====== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.course-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .course-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 255, 234, 0.2);
+        border-color: var(--accent);
+    }
+
+    .course-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+    }
+
+    .course-card:hover::before {
+        transform: scaleX(1);
+    }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.course-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.card-subtitle-futuristic {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card-text-futuristic {
+    color: var(--gray-200);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.card-footer-futuristic {
+    text-align: right;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language-badge {
+    background: var(--accent);
+    color: var(--secondary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ====== FILTER SECTION ====== */
+.filter-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ====== EMPTY STATE ====== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray-200);
+}
+
+    .empty-state i {
+        font-size: 4rem;
+        color: var(--accent);
+        margin-bottom: 20px;
+    }
+
+    .empty-state h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+    }
+
+/* ====== BACKGROUND ELEMENTS ====== */
+.bg-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.element {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 255, 234, 0.03);
+    animation: float 8s infinite ease-in-out;
+}
+
+.element-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 5%;
+    animation-delay: 3s;
+}
+
+.element-3 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 6s;
+}
+
+.grid-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 255, 234, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 234, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+}
+
+/* ====== VALIDATION STYLES ====== */
+.text-danger {
+    color: var(--danger) !important;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.input-error {
+    border-color: var(--danger) !important;
+    box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1) !important;
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--accent);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent);
+    }
+}
+
+/* ====== FOCUS EFFECTS ====== */
+.form-control-futuristic:focus {
+    animation: glow 2s infinite;
+}
+
+/* ====== LINKS ====== */
+a:not(.nav-btn):not(.btn-futuristic):not(.btn-outline-futuristic) {
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    a:not(.nav-btn):not(.btn-futuristic):not(.btn-outline-futuristic):hover {
+        text-shadow: 0 0 10px var(--accent);
+    }
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+    .futuristic-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .filter-form,
+    .btn-group,
+    .navigation-buttons,
+    .card-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-select-futuristic,
+    .btn-futuristic {
+        min-width: 100%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-container {
+        padding: 25px;
+    }
+
+    .card-actions {
+        gap: 10px;
+    }
 }

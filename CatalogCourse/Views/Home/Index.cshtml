@@ -1,53 +1,86 @@
-﻿@{
-    ViewData["Title"] = "Главная страница";
-}
-
+﻿<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CatalogCourse</title>
-
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="site.css" asp-append-version="true" />
+    <title>CatalogCourse - Главная страница</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+    <script src="~/js/home.js" asp-append-version="true"></script>
 </head>
+<body>
+    <div class="grid-lines"></div>
 
-<div class="container mt-5">
-    <div class="text-center mb-5">
-        <h1 class="display-4 text-primary fw-bold">Добро пожаловать в CatalogCourse</h1>
-        <p class="lead text-muted">
-            Здесь вы найдёте полезные руководства и курсы по программированию
-        </p>
-        <a href="/Guides" class="btn btn-lg btn-outline-primary mt-3 shadow-sm">
-            Перейти к каталогу
-        </a>
-    </div>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                CatalogCourse
+            </a>
+        </div>
+    </header>
 
-    <div class="row text-center">
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">🚀 Быстрый старт</h5>
-                    <p class="card-text">Изучите основы C#, ASP.NET и SQL для уверенного старта.</p>
+    <section class="hero">
+        <div class="bg-elements">
+            <div class="element element-1"></div>
+            <div class="element element-2"></div>
+            <div class="element element-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Добро пожаловать в CatalogCourse</h1>
+                <p class="hero-subtitle">
+                    Исследуйте будущее программирования с нашими продвинутыми курсами и руководствами.
+                    Откройте для себя новые технологии и станьте частью цифровой эволюции.
+                </p>
+                <a href="/Guides" class="btn">
+                    <i class="fas fa-arrow-right"></i> Начать обучение
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Наши возможности</h2>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="card-title">Быстрый старт</h3>
+                    <p class="card-text">
+                        Изучите основы C#, ASP.NET и SQL с нашими инновационными методами обучения,
+                        разработанными для быстрого и эффективного освоения материала.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="card-title">Каталог курсов</h3>
+                    <p class="card-text">
+                        Получите доступ к эксклюзивным руководствам по современным языкам
+                        программирования и фреймворкам, созданным экспертами индустрии.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="card-title">Полезные ресурсы</h3>
+                    <p class="card-text">
+                        Официальная документация, API и дополнительные ресурсы для углубленного
+                        изучения технологий будущего и расширения профессиональных навыков.
+                    </p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-body">
-                    <h5 class="card-title text-success">📚 Каталог курсов</h5>
-                    <p class="card-text">Собранные руководства по современным языкам программирования.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-body">
-                    <h5 class="card-title text-danger">💡 Полезные ссылки</h5>
-                    <p class="card-text">Официальная документация и ресурсы для углубленного изучения.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</body>
+</html>
