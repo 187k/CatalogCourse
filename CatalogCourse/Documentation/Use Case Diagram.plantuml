@@ -1,0 +1,10 @@
+@startuml
+rectangle "Каталог курсов" {
+  usecase "Просмотр списка курсов" as UC_View
+  usecase "Фильтрация по языку" as UC_Filter
+  usecase "Добавление нового курса" as UC_Add
+  usecase "Редактирование курса" as UC_Edit
+  usecase "Удаление курса" as UC_Delete
+  usecase "Просмотр ссылки" as UC_Link
+}
+@enduml
