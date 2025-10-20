@@ -1,0 +1,11 @@
+@startuml
+entity "Guides" {
+  * Id : int <<PK>>
+  --
+  Title : string
+  Language : string
+  Description : string
+  Link : string
+  ImagePath : string
+}
+@enduml
