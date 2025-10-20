@@ -1,0 +1,13 @@
+@startuml
+actor "Пользователь" as User
+participant "View (Razor)" as View
+participant "Controller" as Controller
+participant "Database (EF Core)" as DB
+
+User -> View : Заполняет форму курса
+View -> Controller : POST /Guides/Create (данные формы)
+Controller -> DB : Добавление нового объекта Guide
+DB --> Controller : Подтверждение сохранения
+Controller -> View : Redirect на список курсов
+View -> User : Отображение обновлённого списка
+@enduml
